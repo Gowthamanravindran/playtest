@@ -1,0 +1,78 @@
+# General Framework Settings
+environment: local  # local, dev, staging, prod
+debug: false
+
+# Browser Configuration (Playwright)
+browser:
+  # Default browser to use
+  type: chromium  # chromium, firefox, webkit
+  
+  # Browser launch options
+  headless: true
+  slow_mo: 0  # Slow down operations by ms (useful for debugging)
+  timeout: 30000  # Default timeout in ms
+  
+  # Viewport settings
+  viewport:
+    width: 1920
+    height: 1080
+  
+  # Failure artifact settings
+  screenshot_on_failure: true
+  video_on_failure: false
+  trace_on_failure: true
+  
+  # Browser-specific launch arguments
+  chromium:
+    args:
+      - "--disable-gpu"
+      - "--no-sandbox"
+      - "--disable-dev-shm-usage"
+      - "--disable-extensions"
+  
+  firefox:
+    args: []
+  
+  webkit:
+    args: []
+
+# Mobile Framework Configuration (Appium)
+# Environment Variable Overrides:
+#   MOBILE_PLATFORM         - android, ios
+#   MOBILE_DEVICE_NAME      - device/emulator name
+#   MOBILE_PLATFORM_VERSION - OS version
+#   MOBILE_APP_PATH         - path to APK/IPA
+#   MOBILE_APPIUM_SERVER    - Appium server URL
+#   MOBILE_UDID             - device UDID (real devices)
+#   MOBILE_NO_RESET         - true, false
+#   MOBILE_FULL_RESET       - true, false
+mobile:
+  appium_server: "http://localhost:4723"
+  automation_name: "UiAutomator2"  # UiAutomator2 for Android, XCUITest for iOS
+  new_command_timeout: 300
+  no_reset: false
+  full_reset: false
+
+# Allure Reporting Configuration
+allure:
+  results_dir: "reports/allure-results"
+  report_dir: "reports/allure-report"
+  clean_results: true
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file_path: "reports/logs/test.log"
+  rotation: "10 MB"
+  retention: "1 week"
+
+# Parallel Execution
+parallel:
+  enabled: false
+  workers: 4
+
+# Retry Configuration
+retry:
+  count: 0
+  delay: 1.0  # seconds between retries
+

@@ -1,0 +1,29 @@
+# UI Application Settings
+ui:
+  base_url: "http://www.booking.com"
+  login_url: "/login"
+  dashboard_url: "/dashboard"
+
+# Timeouts and Waits (in seconds)
+timeouts:
+  default: 30
+  page_load: 60
+  element_wait: 10
+  api_timeout: 30
+  implicit_wait: 10  # for mobile
+
+# Test Credentials
+credentials:
+  valid_user:
+    username: "testuser"
+    password: "testpassword123"
+    email: "testuser@example.com"
+  
+  admin_user:
+    username: "admin"
+    password: "adminpassword123"
+    email: "admin@example.com"
+  
+  invalid_user:
+    username: "invaliduser"
+    password: "wrongpassword"
