@@ -5,7 +5,10 @@ from playwright.sync_api import expect
 @allure.epic("dashboard pages")
 class TestDashboard:
     @allure.story("Dashboard Load")
-    def test_dashboard(self, page):
+    def test_dashboard(self, page, test_config):
+        # Navigate to the base URL
+        page.goto(test_config.data.ui.base_url)
+        
         dashboard_page = DashboardPage(page)
         assert dashboard_page.is_search_visible() is True
 
