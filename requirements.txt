@@ -23,9 +23,7 @@ allure-pytest==2.13.5
 allure-python-commons==2.13.5
 
 # Configuration & Utilities
-python-dotenv==1.0.1
 pydantic==2.10.3
-pydantic-settings==2.7.0
 PyYAML==6.0.2
 
 # Logging & Debugging

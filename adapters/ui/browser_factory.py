@@ -165,7 +165,7 @@ class BrowserFactory:
         
         return options
     
-    @allure.step("Launch browser: {self.config.browser_type}")
+    @allure.step("Launch browser")
     def launch_browser(self) -> Browser:
         if self._browser is not None and self._browser.is_connected():
             return self._browser

@@ -1,0 +1,4 @@
+reports
+**/**/__pycache__/**
+**/__pycache__/**/*.pyc
+__pycache__/conftest.cpython-312-pytest-8.3.4.pyc
